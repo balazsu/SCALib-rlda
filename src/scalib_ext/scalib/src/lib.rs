@@ -1,10 +1,12 @@
 pub mod belief_propagation;
 pub mod lda;
+pub mod lr;
 pub(crate) mod matrixmul;
 pub mod mttest;
 pub mod sasca;
 pub mod snr;
 pub mod ttest;
+pub mod information;
 pub(crate) mod utils;
 
 use thiserror::Error;

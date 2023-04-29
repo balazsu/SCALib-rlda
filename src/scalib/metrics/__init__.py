@@ -16,3 +16,4 @@ __all__ = ["SNR", "ttest"]
 from .snr import SNR
 from .ttest import Ttest
 from .ttest import MTtest
+from .information import Information

@@ -1,4 +1,4 @@
-.PHONY: dev test devtest coverage docs codestyle fmt wheel help
+.PHONY: dev test devtest coverage docs codestyle fmt wheel help check
 
 help:
 	@echo "Commands for SCALib development:"
@@ -45,4 +45,5 @@ wheel_local:
 
 wheel_portable:
 	SCALIB_PORTABLE=1 CARGO_TARGET_DIR=.cargo_build_portable pip wheel . --no-deps
-
+check:
+	(cd src/scalib_ext/ && cargo check)

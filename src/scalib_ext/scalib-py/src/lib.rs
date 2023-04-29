@@ -9,10 +9,12 @@ use std::error::Error;
 mod belief_propagation;
 mod factor_graph;
 mod lda;
+mod lr;
 mod ranking;
 mod snr;
 mod thread_pool;
 mod ttest;
+mod information;
 
 create_exception!(_scalib_ext, ScalibError, PyException);
 
@@ -118,6 +120,9 @@ fn _scalib_ext(py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<ttest::MTtest>()?;
     m.add_class::<lda::LDA>()?;
     m.add_class::<lda::LdaAcc>()?;
+    m.add_class::<lr::RLDA>()?;
+    m.add_class::<lr::RLDAClusteredModel>()?;
+    m.add_class::<information::ItEstimator>()?;
     m.add_class::<factor_graph::FactorGraph>()?;
     m.add_class::<factor_graph::BPState>()?;
     m.add_class::<thread_pool::ThreadPool>()?;
